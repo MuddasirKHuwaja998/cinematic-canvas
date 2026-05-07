@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, type Variants } from "framer-motion";
 
-const fade = {
+const fade: Variants = {
   hidden: { y: 40, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
+  show: { y: 0, opacity: 1, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 export function About() {
