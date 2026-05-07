@@ -40,47 +40,26 @@ export function Hero() {
             Otocostruzioni · Napoli, Italia
           </motion.div>
 
-          {/* MAXOTO — display name */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+          {/* Headline — single line, no break */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease, delay: 0.2 }}
-            className="mb-6 flex items-end gap-5"
+            className="font-serif font-light tracking-[-0.035em] leading-[0.95] text-ink text-[clamp(2.4rem,7.2vw,6.4rem)] whitespace-nowrap flex items-end gap-4"
           >
-            <h1 className="font-serif font-light tracking-[-0.04em] leading-[0.85] text-ink text-[clamp(4rem,14vw,11rem)]">
-              {"MAXOTO".split("").map((c, i) => (
-                <motion.span
-                  key={i}
-                  initial={{ y: "100%", opacity: 0 }}
-                  animate={{ y: 0, opacity: 1 }}
-                  transition={{ duration: 1.1, ease, delay: 0.25 + i * 0.07 }}
-                  className="inline-block"
-                >
-                  {c}
-                </motion.span>
-              ))}
-            </h1>
+            <span>Amplificatori <em>&amp;</em> Protesi <span className="italic text-gold-deep">Acustiche.</span></span>
             <motion.span
               initial={{ opacity: 0, scale: 0.6 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease, delay: 1.1 }}
-              className="waveform waveform-lg pb-3"
+              transition={{ duration: 1, ease, delay: 1.0 }}
+              className="waveform waveform-lg pb-3 hidden md:inline-flex"
               aria-hidden
             >
-              {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+              {[0, 1, 2, 3, 4, 5].map((i) => (
                 <span key={i} style={{ animationDelay: `${i * 0.12}s`, animationDuration: `${1.2 + (i % 3) * 0.25}s` }} />
               ))}
             </motion.span>
-          </motion.div>
-
-          <motion.div
-            initial={{ y: 20, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease, delay: 0.7 }}
-            className="font-serif italic text-2xl md:text-3xl text-gold-deep mt-2"
-          >
-            Amplificatori &amp; Protesi Acustiche.
-          </motion.div>
+          </motion.h1>
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
@@ -88,7 +67,7 @@ export function Hero() {
             transition={{ duration: 1, ease, delay: 0.95 }}
             className="lead mt-8"
           >
-            Produciamo protesi acustiche digitali certificate <em>CE0051</em>. Senza intermediari, senza costi nascosti — solo qualità italiana al prezzo sociale di <em>€ 950</em>.
+            Produciamo <strong className="text-ink font-semibold">protesi acustiche digitali</strong> certificate <em>CE0051</em>. Senza intermediari, senza costi nascosti — solo <strong className="text-ink font-semibold">qualità italiana</strong> al prezzo sociale di <em>€ 950</em>.
           </motion.p>
 
           <motion.div

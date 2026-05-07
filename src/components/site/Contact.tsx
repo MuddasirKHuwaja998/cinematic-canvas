@@ -16,7 +16,7 @@ export function Contact() {
             Prenota il tuo <em>test gratuito</em> oggi.
           </h2>
           <p className="lead mt-7">
-            Chiamaci o scrivici — l'audioprotesista viene direttamente da te per una valutazione completa, senza alcun impegno.
+            Chiamaci o scrivici — l'<strong className="text-ink font-semibold">audioprotesista</strong> viene direttamente da te per una valutazione completa, <strong className="text-ink font-semibold">senza alcun impegno</strong>.
           </p>
           <a href="tel:+39081287408" className="btn btn-dark mt-10">
             Chiama 081 287408 <span className="arr">→</span>
