@@ -39,11 +39,9 @@ export function SiteNav() {
       >
         <div className="container-x flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" aria-label="MAXOTO">
-            <img
-              src={logo}
-              alt="MAXOTO"
-              className="h-12 w-12 md:h-14 md:w-14 object-contain transition-transform duration-700 group-hover:scale-110 drop-shadow-[0_6px_18px_rgba(58,64,73,0.18)]"
-            />
+            <span className="relative inline-flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-full bg-ink shadow-[0_10px_30px_-10px_rgba(26,29,34,0.55)] ring-1 ring-gold/30 transition-transform duration-700 group-hover:scale-105">
+              <img src={logo} alt="MAXOTO" className="h-9 w-9 md:h-11 md:w-11 object-contain" />
+            </span>
           </Link>
 
           <nav className="hidden lg:flex items-center gap-10">

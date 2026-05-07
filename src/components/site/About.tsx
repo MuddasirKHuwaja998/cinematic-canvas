@@ -30,10 +30,10 @@ export function About() {
             Otocostruzioni dal <em>cuore di Napoli.</em>
           </h2>
           <p className="lead mt-8">
-            Nati a Napoli come produttori diretti, in M.A.X.Oto abbattiamo le barriere dell'udito eliminando ogni intermediario. Oggi operiamo su scala nazionale offrendo, oltre ai dispositivi digitali su misura, una nuova gamma di Amplificatori Acustici professionali.
+            Nati a <strong className="text-ink font-semibold">Napoli</strong> come produttori diretti, in M.A.X.Oto abbattiamo le barriere dell'udito eliminando ogni intermediario. Oggi operiamo su <strong className="text-ink font-semibold">scala nazionale</strong> offrendo, oltre ai dispositivi digitali su misura, una nuova gamma di Amplificatori Acustici professionali.
           </p>
           <p className="lead mt-5">
-            Ideali per difficoltà lievi o temporanee, questi supporti sono immediati, semplici da usare e non richiedono prescrizione medica, mantenendo gli standard tecnici che ci distinguono da anni.
+            Ideali per <strong className="text-ink font-semibold">difficoltà lievi o temporanee</strong>, questi supporti sono immediati, semplici da usare e <strong className="text-ink font-semibold">non richiedono prescrizione medica</strong>, mantenendo gli standard tecnici che ci distinguono da anni.
           </p>
           <div className="mt-10 font-serif italic text-2xl text-gold-deep">
             Italian craftsmanship, oggi.
