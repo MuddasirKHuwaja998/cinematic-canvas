@@ -5,17 +5,18 @@ import hero from "@/assets/max/hero.png";
 export function Hero() {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
-  const y = useTransform(scrollYProgress, [0, 1], [0, 180]);
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.08]);
-  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.2]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, 220]);
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 1.12]);
+  const rot = useTransform(scrollYProgress, [0, 1], [0, -3]);
+  const opacity = useTransform(scrollYProgress, [0, 1], [1, 0.15]);
 
   const ease = [0.16, 1, 0.3, 1] as const;
 
   return (
-    <section ref={ref} id="top" className="relative min-h-[100svh] pt-32 lg:pt-40 pb-20 overflow-hidden">
+    <section ref={ref} id="top" className="relative min-h-[100svh] pt-32 lg:pt-40 pb-24 overflow-hidden">
       {/* ambient glows */}
-      <div className="glow-gold w-[60vw] h-[60vw] -top-[20vw] -right-[20vw] opacity-70" />
-      <div className="glow-gold w-[40vw] h-[40vw] top-[40vh] -left-[15vw] opacity-40" />
+      <div className="glow-gold w-[70vw] h-[70vw] -top-[25vw] -right-[25vw] opacity-70" />
+      <div className="glow-gold w-[45vw] h-[45vw] top-[45vh] -left-[18vw] opacity-40" />
 
       {/* drifting dots */}
       <div aria-hidden className="absolute inset-0 pointer-events-none">
@@ -29,7 +30,7 @@ export function Hero() {
       </div>
 
       <motion.div style={{ opacity }} className="container-x relative grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-        <div className="lg:col-span-7 relative z-10">
+        <div className="lg:col-span-6 relative z-10">
           <motion.div
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -39,24 +40,52 @@ export function Hero() {
             Otocostruzioni · Napoli, Italia
           </motion.div>
 
-          <h1 className="display">
-            {["Amplificatori", "e", "Protesi", "Acustiche."].map((w, i) => (
-              <motion.span
-                key={i}
-                initial={{ y: "110%", opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 1.1, ease, delay: 0.2 + i * 0.12 }}
-                className="inline-block overflow-hidden mr-[0.25em]"
-              >
-                <span className={i >= 2 ? "italic text-gold-deep" : ""}>{w}</span>
-              </motion.span>
-            ))}
-          </h1>
+          {/* MAXOTO — display name */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.2, ease, delay: 0.2 }}
+            className="mb-6 flex items-end gap-5"
+          >
+            <h1 className="font-serif font-light tracking-[-0.04em] leading-[0.85] text-ink text-[clamp(4rem,14vw,11rem)]">
+              {"MAXOTO".split("").map((c, i) => (
+                <motion.span
+                  key={i}
+                  initial={{ y: "100%", opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  transition={{ duration: 1.1, ease, delay: 0.25 + i * 0.07 }}
+                  className="inline-block"
+                >
+                  {c}
+                </motion.span>
+              ))}
+            </h1>
+            <motion.span
+              initial={{ opacity: 0, scale: 0.6 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, ease, delay: 1.1 }}
+              className="waveform waveform-lg pb-3"
+              aria-hidden
+            >
+              {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+                <span key={i} style={{ animationDelay: `${i * 0.12}s`, animationDuration: `${1.2 + (i % 3) * 0.25}s` }} />
+              ))}
+            </motion.span>
+          </motion.div>
+
+          <motion.div
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 1, ease, delay: 0.7 }}
+            className="font-serif italic text-2xl md:text-3xl text-gold-deep mt-2"
+          >
+            Amplificatori &amp; Protesi Acustiche.
+          </motion.div>
 
           <motion.p
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease, delay: 0.9 }}
+            transition={{ duration: 1, ease, delay: 0.95 }}
             className="lead mt-8"
           >
             Produciamo protesi acustiche digitali certificate <em>CE0051</em>. Senza intermediari, senza costi nascosti — solo qualità italiana al prezzo sociale di <em>€ 950</em>.
@@ -65,7 +94,7 @@ export function Hero() {
           <motion.div
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1, ease, delay: 1.05 }}
+            transition={{ duration: 1, ease, delay: 1.15 }}
             className="mt-10 flex flex-wrap gap-4"
           >
             <a href="#contact" className="btn btn-gold">Prenota Test Gratuito <span className="arr">→</span></a>
@@ -91,15 +120,30 @@ export function Hero() {
           </motion.div>
         </div>
 
-        <motion.div style={{ y, scale }} className="lg:col-span-5 relative">
+        <motion.div style={{ y, scale, rotate: rot }} className="lg:col-span-6 relative">
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.6, ease, delay: 0.3 }}
-            className="relative aspect-square float-slow"
+            initial={{ opacity: 0, scale: 0.9, y: 40 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ duration: 1.8, ease, delay: 0.4 }}
+            className="relative aspect-[4/3] float-slow"
           >
-            <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-gold-soft/40 via-transparent to-gold/20 blur-2xl" />
-            <img src={hero} alt="Amplificatori e apparecchi acustici M.A.X.Oto" className="relative w-full h-full object-contain drop-shadow-[0_40px_60px_rgba(58,64,73,0.25)]" />
+            <div className="absolute inset-[-8%] rounded-[3rem] bg-gradient-to-br from-gold-soft/40 via-transparent to-gold/25 blur-3xl" />
+            <div className="absolute inset-0 rounded-[2.5rem] bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.55),_transparent_65%)]" />
+            <img
+              src={hero}
+              alt="MAXOTO — apparecchi acustici e amplificatori"
+              className="relative w-full h-full object-contain drop-shadow-[0_60px_80px_rgba(58,64,73,0.28)]"
+            />
+            {/* floating badge */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease, delay: 1.6 }}
+              className="absolute -left-2 bottom-6 md:bottom-10 glass rounded-full px-5 py-3 flex items-center gap-3"
+            >
+              <span className="pulse-dot" />
+              <span className="text-[10px] tracking-[0.3em] uppercase font-semibold text-ink">CE 0051 · Made in Napoli</span>
+            </motion.div>
           </motion.div>
         </motion.div>
       </motion.div>
