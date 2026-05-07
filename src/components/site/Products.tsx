@@ -79,9 +79,9 @@ function ProductStoryCard({ p, index }: { p: Product; index: number }) {
         )}
       </div>
 
-      {/* Visual stage */}
-      <div className="relative rounded-[2rem] overflow-hidden bg-gradient-to-b from-[#f5f1e8] via-[#efe7d4] to-[#e6dcc4] aspect-[4/5] md:aspect-[5/6]">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.4),_transparent_60%)]" />
+      {/* Visual stage — compact, refined */}
+      <div className="relative mx-auto w-full max-w-[420px] rounded-[1.75rem] overflow-hidden bg-gradient-to-b from-[#f5f1e8] via-[#efe7d4] to-[#e6dcc4] aspect-[4/5] shadow-[0_40px_80px_-40px_rgba(58,64,73,0.35)]">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(255,255,255,0.45),_transparent_60%)]" />
         <video
           autoPlay
           muted
@@ -94,8 +94,14 @@ function ProductStoryCard({ p, index }: { p: Product; index: number }) {
           <source src={p.video} type="video/mp4" />
         </video>
         {/* corner number */}
-        <div className="absolute top-6 left-6 font-serif italic text-white/85 text-sm tracking-[0.3em]">
+        <div className="absolute top-5 left-5 font-serif italic text-white/90 text-xs tracking-[0.3em]">
           0{index + 1}
+        </div>
+        {/* subtle waveform overlay */}
+        <div className="absolute bottom-5 right-5 waveform" aria-hidden>
+          {[0, 1, 2, 3].map((i) => (
+            <span key={i} style={{ animationDelay: `${i * 0.18}s`, background: "rgba(255,255,255,0.85)", boxShadow: "none" }} />
+          ))}
         </div>
       </div>
 
