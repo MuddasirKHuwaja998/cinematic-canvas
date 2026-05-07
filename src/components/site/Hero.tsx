@@ -45,7 +45,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, ease, delay: 0.2 }}
-            className="font-serif font-light tracking-[-0.035em] leading-[0.95] text-ink text-[clamp(2.4rem,7.2vw,6.4rem)] flex flex-wrap items-end gap-x-4 gap-y-2 [text-wrap:balance]"
+            className="font-serif font-light tracking-[-0.035em] leading-[0.95] text-ink text-[clamp(1.5rem,5.6vw,6.4rem)] whitespace-nowrap flex items-end gap-3"
           >
             <span>Amplificatori <em>&amp;</em> Protesi <span className="italic text-gold-deep">Acustiche.</span></span>
             <motion.span
