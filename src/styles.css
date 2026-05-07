@@ -272,3 +272,55 @@
   border-radius: 2px;
   animation: scrollHint 2.2s ease-in-out infinite;
 }
+
+/* Waveform — subtle audio bars */
+@keyframes wave {
+  0%, 100% { transform: scaleY(0.3); }
+  50% { transform: scaleY(1); }
+}
+.waveform {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  height: 28px;
+}
+.waveform > span {
+  display: block;
+  width: 2px;
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  transform-origin: center;
+  animation: wave 1.6s ease-in-out infinite;
+  opacity: 0.65;
+}
+
+/* Chapter number */
+.chapter-num {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  color: var(--gold-deep);
+  text-transform: uppercase;
+}
+
+/* Display XL — chapter titles */
+.display-xl {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  font-size: clamp(3rem, 9vw, 8rem);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+}
+
+/* Soft pulse for medical/AI badges */
+@keyframes softPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(205,174,121,0.4); }
+  50% { box-shadow: 0 0 0 14px rgba(205,174,121,0); }
+}
+.pulse-dot {
+  width: 8px; height: 8px; border-radius: 999px;
+  background: var(--gold);
+  animation: softPulse 2.4s ease-out infinite;
+}
