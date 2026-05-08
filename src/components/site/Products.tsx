@@ -237,21 +237,22 @@ export function Products() {
           variants={{ show: { transition: { staggerChildren: 0.2 } } }}
           className="container-x"
         >
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-start">
-            <div className="lg:col-span-7">
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+            <div className="lg:col-span-6">
               <ProductStoryCard p={apparecchi[0]} index={0} />
             </div>
             <motion.aside
               variants={fadeUp}
-              className="lg:col-span-5 lg:sticky lg:top-32 lg:pt-20"
+              className="lg:col-span-6 lg:sticky lg:top-32 lg:pt-16"
             >
-              <div className="text-[11px] tracking-[0.28em] uppercase text-gold-deep mb-5">
-                Perché un dispositivo medico
+              <div className="text-[11px] tracking-[0.28em] uppercase text-gold-deep mb-5 font-bold">
+                — Apparecchi Prescritti
               </div>
+              <h3 className="font-serif text-3xl lg:text-4xl text-ink leading-tight mb-6">
+                Protesi acustiche digitali, <em>su misura.</em>
+              </h3>
               <p className="lead">
-                Gli apparecchi acustici sono <em>dispositivi medici</em> regolamentati. Compensano l'ipoacusia con
-                elaborazione digitale del suono, riduzione del rumore e direzionalità adattiva. Richiedono prescrizione
-                e adattamento personalizzato.
+                <strong className="text-ink font-semibold">Prescritte e adattate</strong> da audioprotesisti qualificati per la riabilitazione dell'ipoacusia. Compensano l'udito con elaborazione digitale, riduzione del rumore e direzionalità adattiva — sono <em>dispositivi medici</em> regolamentati.
               </p>
               <div className="mt-10 grid grid-cols-2 gap-4">
                 {[
