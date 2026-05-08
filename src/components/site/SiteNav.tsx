@@ -2,18 +2,57 @@ import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/max/logo.png";
+import { TestModal } from "./TestModal";
 
 const links = [
   { href: "#about", label: "Chi Siamo" },
   { href: "#products", label: "Prodotti" },
   { href: "#pricing", label: "Prezzi" },
-  { href: "#partner", label: "Partner" },
+  { href: "#partner", label: "Diventa Partner" },
   { href: "#contact", label: "Contatti" },
 ];
+
+// Decorative golden thread — looks like a thin tied wrap
+function Thread({ className = "" }: { className?: string }) {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 60 24"
+      className={`shrink-0 h-5 w-[42px] opacity-90 ${className}`}
+      fill="none"
+    >
+      <defs>
+        <linearGradient id="threadGold" x1="0" x2="1" y1="0" y2="0">
+          <stop offset="0%" stopColor="#cdae79" stopOpacity="0.1" />
+          <stop offset="50%" stopColor="#e3cfa8" stopOpacity="1" />
+          <stop offset="100%" stopColor="#cdae79" stopOpacity="0.1" />
+        </linearGradient>
+      </defs>
+      {/* main wrap line */}
+      <path
+        d="M2 12 Q 15 2, 30 12 T 58 12"
+        stroke="url(#threadGold)"
+        strokeWidth="1"
+        strokeLinecap="round"
+      />
+      {/* secondary thinner thread */}
+      <path
+        d="M4 14 Q 18 6, 30 14 T 56 14"
+        stroke="#cdae79"
+        strokeOpacity="0.45"
+        strokeWidth="0.6"
+        strokeLinecap="round"
+      />
+      {/* tiny knot */}
+      <circle cx="30" cy="12" r="1.4" fill="#e3cfa8" />
+    </svg>
+  );
+}
 
 export function SiteNav() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [testOpen, setTestOpen] = useState(false);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -37,12 +76,18 @@ export function SiteNav() {
             : "py-4 bg-[rgba(26,29,34,0.78)] backdrop-blur-md"
         }`}
       >
-        <div className="container-x flex items-center justify-between">
-          <Link to="/" className="flex items-center gap-3 group" aria-label="MAXOTO">
-            <span className="relative inline-flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] ring-1 ring-gold/30 transition-transform duration-700 group-hover:scale-105">
-              <img src={logo} alt="MAXOTO" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
-            </span>
-          </Link>
+        <div className="container-x flex items-center justify-between gap-4">
+          <div className="flex items-center gap-3 lg:gap-5 min-w-0">
+            <Link to="/" className="flex items-center group" aria-label="MAXOTO">
+              <img
+                src={logo}
+                alt="MAXOTO"
+                className="h-10 md:h-12 w-auto object-contain transition-transform duration-700 group-hover:scale-[1.04] drop-shadow-[0_4px_18px_rgba(205,174,121,0.35)]"
+              />
+            </Link>
+            {/* Thread between logo and first menu link */}
+            <Thread className="hidden lg:block" />
+          </div>
 
           <nav className="hidden lg:flex items-center gap-9">
             {links.map((l) => (
@@ -54,12 +99,17 @@ export function SiteNav() {
                 {l.label}
               </a>
             ))}
+            {/* Thread after Contatti */}
+            <Thread />
           </nav>
 
           <div className="flex items-center gap-3">
-            <a href="#contact" className="hidden md:inline-flex btn btn-gold !py-3 !px-5 !text-[11px]">
+            <button
+              onClick={() => setTestOpen(true)}
+              className="hidden md:inline-flex btn btn-gold !py-3 !px-5 !text-[11px]"
+            >
               Test Gratuito <span className="arr">→</span>
-            </a>
+            </button>
             <button
               aria-label="Menu"
               onClick={() => setOpen((v) => !v)}
@@ -79,8 +129,9 @@ export function SiteNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-ink/95 backdrop-blur-2xl lg:hidden flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-ink/95 backdrop-blur-2xl lg:hidden flex flex-col items-center justify-center gap-7 px-6"
           >
+            <Thread />
             {links.map((l, i) => (
               <motion.a
                 key={l.href}
@@ -89,24 +140,29 @@ export function SiteNav() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1 + i * 0.07, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="font-serif text-4xl text-white hover:text-gold transition-colors"
+                className="font-serif text-3xl sm:text-4xl text-white hover:text-gold transition-colors text-center"
               >
                 {l.label}
               </motion.a>
             ))}
-            <motion.a
-              href="#contact"
-              onClick={() => setOpen(false)}
+            <Thread />
+            <motion.button
+              onClick={() => {
+                setOpen(false);
+                setTestOpen(true);
+              }}
               initial={{ y: 30, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ delay: 0.5, duration: 0.7 }}
-              className="btn btn-gold mt-4"
+              transition={{ delay: 0.55, duration: 0.7 }}
+              className="btn btn-gold mt-2"
             >
               Test Gratuito <span className="arr">→</span>
-            </motion.a>
+            </motion.button>
           </motion.aside>
         )}
       </AnimatePresence>
+
+      <TestModal open={testOpen} onClose={() => setTestOpen(false)} />
     </>
   );
 }
