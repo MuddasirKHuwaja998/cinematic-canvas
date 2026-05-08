@@ -97,10 +97,10 @@ function ProductStoryCard({ p, index }: { p: Product; index: number }) {
         <div className="absolute top-5 left-5 font-serif italic text-white/90 text-xs tracking-[0.3em]">
           0{index + 1}
         </div>
-        {/* subtle waveform overlay */}
+        {/* golden waveform overlay */}
         <div className="absolute bottom-5 right-5 waveform" aria-hidden>
           {[0, 1, 2, 3].map((i) => (
-            <span key={i} style={{ animationDelay: `${i * 0.18}s`, background: "rgba(255,255,255,0.85)", boxShadow: "none" }} />
+            <span key={i} style={{ animationDelay: `${i * 0.18}s` }} />
           ))}
         </div>
       </div>
