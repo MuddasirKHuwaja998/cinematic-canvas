@@ -64,6 +64,12 @@ export function SiteNav() {
     document.body.style.overflow = open ? "hidden" : "";
   }, [open]);
 
+  useEffect(() => {
+    const handler = () => setTestOpen(true);
+    window.addEventListener("maxoto:open-test", handler);
+    return () => window.removeEventListener("maxoto:open-test", handler);
+  }, []);
+
   return (
     <>
       <motion.header
