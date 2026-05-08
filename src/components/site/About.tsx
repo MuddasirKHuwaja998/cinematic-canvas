@@ -27,7 +27,7 @@ export function About() {
         >
           <div className="eyebrow mb-8">Chi Siamo</div>
           <h2 className="display-md">
-            Otocostruzioni dal <em>cuore di Napoli.</em>
+            Otocostruzioni <em>Made in Italy.</em>
           </h2>
           <p className="lead mt-8">
             Nati a <strong className="text-ink font-semibold">Napoli</strong> come produttori diretti, in M.A.X.Oto abbattiamo le barriere dell'udito eliminando ogni intermediario. Oggi operiamo su <strong className="text-ink font-semibold">scala nazionale</strong> offrendo, oltre ai dispositivi digitali su misura, una nuova gamma di Amplificatori Acustici professionali.
