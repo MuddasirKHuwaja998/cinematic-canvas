@@ -66,7 +66,12 @@ export function Hero() {
             transition={{ duration: 1, ease, delay: 1.15 }}
             className="mt-9 flex flex-wrap gap-4"
           >
-            <a href="#contact" className="btn btn-gold">Prenota Test Gratuito <span className="arr">→</span></a>
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("maxoto:open-test"))}
+              className="btn btn-gold"
+            >
+              Prenota Test Gratuito <span className="arr">→</span>
+            </button>
             <a href="#products" className="btn btn-outline">Scopri i Prodotti</a>
           </motion.div>
         </div>
