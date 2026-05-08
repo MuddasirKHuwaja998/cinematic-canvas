@@ -33,23 +33,23 @@ export function SiteNav() {
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 inset-x-0 z-50 transition-all duration-700 ${
           scrolled
-            ? "py-3 bg-[rgba(250,248,243,0.78)] backdrop-blur-xl border-b border-[var(--line)]"
-            : "py-6 bg-transparent"
+            ? "py-2.5 bg-[rgba(26,29,34,0.92)] backdrop-blur-xl border-b border-white/10 shadow-[0_10px_40px_-20px_rgba(0,0,0,0.6)]"
+            : "py-4 bg-[rgba(26,29,34,0.78)] backdrop-blur-md"
         }`}
       >
         <div className="container-x flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group" aria-label="MAXOTO">
-            <span className="relative inline-flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-full bg-ink shadow-[0_10px_30px_-10px_rgba(26,29,34,0.55)] ring-1 ring-gold/30 transition-transform duration-700 group-hover:scale-105">
-              <img src={logo} alt="MAXOTO" className="h-9 w-9 md:h-11 md:w-11 object-contain" />
+            <span className="relative inline-flex items-center justify-center h-12 w-12 md:h-14 md:w-14 rounded-xl bg-white shadow-[0_8px_24px_-8px_rgba(0,0,0,0.4)] ring-1 ring-gold/30 transition-transform duration-700 group-hover:scale-105">
+              <img src={logo} alt="MAXOTO" className="h-10 w-10 md:h-12 md:w-12 object-contain" />
             </span>
           </Link>
 
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-9">
             {links.map((l) => (
               <a
                 key={l.href}
                 href={l.href}
-                className="text-[12px] tracking-[0.22em] uppercase text-ink-soft hover:text-gold-deep transition-colors duration-500"
+                className="nav-link text-[12px] tracking-[0.24em] uppercase font-bold text-white/85 hover:text-white transition-colors duration-500"
               >
                 {l.label}
               </a>
@@ -63,10 +63,10 @@ export function SiteNav() {
             <button
               aria-label="Menu"
               onClick={() => setOpen((v) => !v)}
-              className="lg:hidden w-11 h-11 flex flex-col gap-[5px] items-center justify-center rounded-full border border-[var(--line)] bg-white/60 backdrop-blur"
+              className="lg:hidden w-11 h-11 flex flex-col gap-[5px] items-center justify-center rounded-full border border-white/20 bg-white/10 backdrop-blur"
             >
-              <span className={`block w-4 h-px bg-ink transition-transform duration-500 ${open ? "translate-y-[3px] rotate-45" : ""}`} />
-              <span className={`block w-4 h-px bg-ink transition-transform duration-500 ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
+              <span className={`block w-4 h-px bg-white transition-transform duration-500 ${open ? "translate-y-[3px] rotate-45" : ""}`} />
+              <span className={`block w-4 h-px bg-white transition-transform duration-500 ${open ? "-translate-y-[3px] -rotate-45" : ""}`} />
             </button>
           </div>
         </div>
@@ -79,7 +79,7 @@ export function SiteNav() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-40 bg-cream/95 backdrop-blur-2xl lg:hidden flex flex-col items-center justify-center gap-8"
+            className="fixed inset-0 z-40 bg-ink/95 backdrop-blur-2xl lg:hidden flex flex-col items-center justify-center gap-8"
           >
             {links.map((l, i) => (
               <motion.a
@@ -89,7 +89,7 @@ export function SiteNav() {
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 0.1 + i * 0.07, duration: 0.7, ease: [0.16, 1, 0.3, 1] }}
-                className="font-serif text-4xl text-ink hover:text-gold-deep transition-colors"
+                className="font-serif text-4xl text-white hover:text-gold transition-colors"
               >
                 {l.label}
               </motion.a>
