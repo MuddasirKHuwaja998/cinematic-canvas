@@ -168,19 +168,19 @@ export function Products() {
 
   return (
     <section id="products" ref={ref} className="relative bg-paper overflow-hidden">
-      {/* Section opener */}
+      {/* Section opener — balanced two-column intro */}
       <div className="relative pt-32 lg:pt-44 pb-10">
         <motion.div
           style={{ y: bgY }}
           className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(205,174,121,0.10),_transparent_65%)]"
         />
-        <div className="container-x relative">
+        <div className="container-x relative grid lg:grid-cols-12 gap-10 lg:gap-16 items-end">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10%" }}
             transition={{ duration: 1.1, ease }}
-            className="max-w-3xl"
+            className="lg:col-span-7"
           >
             <div className="eyebrow mb-7">I Nostri Prodotti</div>
             <h2 className="display-md">
@@ -191,6 +191,31 @@ export function Products() {
               CE0051 e una linea di <strong className="text-ink font-medium">amplificatori acustici</strong> pronti
               all'uso. Scegli in base al tuo bisogno, non al tuo budget.
             </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, margin: "-10%" }}
+            transition={{ duration: 1.2, ease, delay: 0.2 }}
+            className="lg:col-span-5"
+          >
+            <div className="relative pl-8 border-l border-gold/40">
+              <div className="chapter-num mb-4">— Made in Napoli</div>
+              <p className="font-serif italic text-2xl lg:text-3xl text-ink leading-snug">
+                "Dal produttore al tuo orecchio.<br/>Senza intermediari, senza compromessi."
+              </p>
+              <div className="mt-6 flex items-center gap-4">
+                <span className="waveform" aria-hidden>
+                  {[0, 1, 2, 3, 4].map((i) => (
+                    <span key={i} style={{ animationDelay: `${i * 0.15}s` }} />
+                  ))}
+                </span>
+                <span className="text-[11px] tracking-[0.28em] uppercase text-ink-mute font-semibold">
+                  CE 0051 · Garanzia 2 Anni
+                </span>
+              </div>
+            </div>
           </motion.div>
         </div>
       </div>
