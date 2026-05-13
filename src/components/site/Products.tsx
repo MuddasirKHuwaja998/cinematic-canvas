@@ -222,7 +222,7 @@ export function Products() {
           eyebrow="Dispositivi Medici · CE 0051"
           title="Apparecchi"
           emphasis="Acustici."
-          description="Protesi acustiche digitali certificate, prescritte e adattate da audioprotesisti qualificati per la riabilitazione dell'ipoacusia. Tecnologia medicale italiana, su misura."
+          description=""
         />
 
         <motion.div
@@ -232,35 +232,8 @@ export function Products() {
           variants={{ show: { transition: { staggerChildren: 0.2 } } }}
           className="container-x"
         >
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            <div className="lg:col-span-6">
-              <ProductStoryCard p={apparecchi[0]} index={0} />
-            </div>
-            <motion.aside
-              variants={fadeUp}
-              className="lg:col-span-6 lg:sticky lg:top-32 lg:pt-16"
-            >
-              <div className="text-[11px] tracking-[0.28em] uppercase text-gold-deep mb-5 font-bold">
-                — Apparecchi Prescritti
-              </div>
-              <h3 className="font-serif text-3xl lg:text-4xl text-ink leading-tight mb-6">
-                Protesi acustiche digitali, <em>su misura.</em>
-              </h3>
-              <p className="lead">
-                <strong className="text-ink font-semibold">Prescritte e adattate</strong> da audioprotesisti qualificati per la riabilitazione dell'ipoacusia. Compensano l'udito con elaborazione digitale, riduzione del rumore e direzionalità adattiva — sono <em>dispositivi medici</em> regolamentati.
-              </p>
-              <div className="mt-10 grid grid-cols-2 gap-4">
-                {[
-                  ["CE 0051", "Marchio medicale"],
-                  ["2 Anni", "Garanzia inclusa"],
-                ].map(([k, v]) => (
-                  <div key={k} className="rounded-2xl border border-[var(--line)] bg-white/70 backdrop-blur p-5">
-                    <div className="font-serif text-2xl text-ink">{k}</div>
-                    <div className="text-[11px] tracking-[0.22em] uppercase text-ink-mute mt-2">{v}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.aside>
+          <div className="max-w-xl mx-auto">
+            <ProductStoryCard p={apparecchi[0]} index={0} />
           </div>
         </motion.div>
       </div>
