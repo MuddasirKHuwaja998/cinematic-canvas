@@ -250,7 +250,7 @@ export function Products() {
           eyebrow="Supporti Acustici · Non Medicali"
           title="Amplificatori"
           emphasis="Acustici."
-          description="Soluzioni immediate per difficoltà uditive lievi o temporanee. Pronti all'uso, senza prescrizione, con la qualità tecnica M.A.X.Oto."
+          description="Soluzioni immediate per difficoltà uditive lievi o temporanee. Pronti all'uso, senza prescrizione, con la qualità tecnica M.A.X.OTO."
         />
 
         <motion.div
