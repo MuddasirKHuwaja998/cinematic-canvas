@@ -154,7 +154,7 @@ function ChapterTitle({
           <h2 className="display-xl">
             {title} <em className="block md:inline">{emphasis}</em>
           </h2>
-          <p className="lead mt-8 max-w-2xl">{description}</p>
+          {description && <p className="lead mt-8 max-w-2xl">{description}</p>}
         </motion.div>
       </div>
     </div>
