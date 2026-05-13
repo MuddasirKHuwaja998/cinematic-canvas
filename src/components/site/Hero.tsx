@@ -47,8 +47,7 @@ export function Hero() {
             transition={{ duration: 1.2, ease, delay: 0.2 }}
             className="font-serif font-light tracking-[-0.035em] leading-[0.95] text-ink text-[clamp(2.4rem,6.2vw,5.6rem)]"
           >
-            <span className="block">Amplificatori <em>&amp;</em></span>
-            <span className="block">Protesi <span className="italic text-gold-deep">Acustiche.</span></span>
+            <span className="block">Amplificatori <span className="italic text-gold-deep">acustici.</span></span>
           </motion.h1>
 
           <motion.p
@@ -57,7 +56,7 @@ export function Hero() {
             transition={{ duration: 1, ease, delay: 0.95 }}
             className="lead mt-7"
           >
-            Produciamo <strong className="text-ink font-semibold">protesi acustiche digitali</strong> certificate <em>CE0051</em>. Senza intermediari, senza costi nascosti — solo <strong className="text-ink font-semibold">qualità italiana</strong> al prezzo sociale di <em>€ 950</em>.
+            Produciamo <strong className="text-ink font-semibold">amplificatori acustici professionali</strong>, direttamente dal <strong className="text-ink font-semibold">costruttore al rivenditore</strong> — solo <strong className="text-ink font-semibold">qualità italiana</strong>.
           </motion.p>
 
           <motion.div
@@ -143,10 +142,9 @@ export function Hero() {
         transition={{ duration: 1.2, delay: 1.5, ease }}
         className="container-x relative mt-14 lg:mt-20"
       >
-        <div className="grid grid-cols-3 gap-4 sm:gap-8 border-t border-[var(--line)] pt-8">
+        <div className="grid grid-cols-2 gap-6 sm:gap-12 border-t border-[var(--line)] pt-8 max-w-3xl mx-auto">
           {[
             ["9M+", "Italiani con ipoacusia"],
-            ["CE 0051", "Certificazione"],
             ["2 Anni", "Garanzia inclusa"],
           ].map(([n, l]) => (
             <div key={l} className="flex flex-col items-center text-center sm:items-start sm:text-left">
