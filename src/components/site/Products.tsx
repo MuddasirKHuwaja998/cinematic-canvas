@@ -154,7 +154,7 @@ function ChapterTitle({
           <h2 className="display-xl">
             {title} <em className="block md:inline">{emphasis}</em>
           </h2>
-          <p className="lead mt-8 max-w-2xl">{description}</p>
+          {description && <p className="lead mt-8 max-w-2xl">{description}</p>}
         </motion.div>
       </div>
     </div>
@@ -184,13 +184,8 @@ export function Products() {
           >
             <div className="eyebrow mb-7">I Nostri Prodotti</div>
             <h2 className="display-md">
-              Due famiglie. <em>Una sola cura</em> per l'udito.
+              Eccellenza italiana, <em>su misura per te.</em>
             </h2>
-            <p className="lead mt-7">
-              Una linea di <strong className="text-ink font-medium">apparecchi acustici medicali</strong> certificati
-              CE0051 e una linea di <strong className="text-ink font-medium">amplificatori acustici</strong> pronti
-              all'uso. Scegli in base al tuo bisogno, non al tuo budget.
-            </p>
           </motion.div>
 
           <motion.div
@@ -203,7 +198,7 @@ export function Products() {
             <div className="relative pl-8 border-l border-gold/40">
               <div className="chapter-num mb-4">— Made in Napoli</div>
               <p className="font-serif italic text-2xl lg:text-3xl text-ink leading-snug">
-                "Dal produttore al tuo orecchio.<br/>Senza intermediari, senza compromessi."
+                "Dai nostri laboratori alla tua attività: l'eccellenza che massimizza la tua redditività."
               </p>
               <div className="mt-6 flex items-center gap-4">
                 <span className="waveform" aria-hidden>
@@ -227,7 +222,7 @@ export function Products() {
           eyebrow="Dispositivi Medici · CE 0051"
           title="Apparecchi"
           emphasis="Acustici."
-          description="Protesi acustiche digitali certificate, prescritte e adattate da audioprotesisti qualificati per la riabilitazione dell'ipoacusia. Tecnologia medicale italiana, su misura."
+          description=""
         />
 
         <motion.div
@@ -237,35 +232,8 @@ export function Products() {
           variants={{ show: { transition: { staggerChildren: 0.2 } } }}
           className="container-x"
         >
-          <div className="grid lg:grid-cols-12 gap-12 lg:gap-20 items-start">
-            <div className="lg:col-span-6">
-              <ProductStoryCard p={apparecchi[0]} index={0} />
-            </div>
-            <motion.aside
-              variants={fadeUp}
-              className="lg:col-span-6 lg:sticky lg:top-32 lg:pt-16"
-            >
-              <div className="text-[11px] tracking-[0.28em] uppercase text-gold-deep mb-5 font-bold">
-                — Apparecchi Prescritti
-              </div>
-              <h3 className="font-serif text-3xl lg:text-4xl text-ink leading-tight mb-6">
-                Protesi acustiche digitali, <em>su misura.</em>
-              </h3>
-              <p className="lead">
-                <strong className="text-ink font-semibold">Prescritte e adattate</strong> da audioprotesisti qualificati per la riabilitazione dell'ipoacusia. Compensano l'udito con elaborazione digitale, riduzione del rumore e direzionalità adattiva — sono <em>dispositivi medici</em> regolamentati.
-              </p>
-              <div className="mt-10 grid grid-cols-2 gap-4">
-                {[
-                  ["CE 0051", "Marchio medicale"],
-                  ["2 Anni", "Garanzia inclusa"],
-                ].map(([k, v]) => (
-                  <div key={k} className="rounded-2xl border border-[var(--line)] bg-white/70 backdrop-blur p-5">
-                    <div className="font-serif text-2xl text-ink">{k}</div>
-                    <div className="text-[11px] tracking-[0.22em] uppercase text-ink-mute mt-2">{v}</div>
-                  </div>
-                ))}
-              </div>
-            </motion.aside>
+          <div className="max-w-xl mx-auto">
+            <ProductStoryCard p={apparecchi[0]} index={0} />
           </div>
         </motion.div>
       </div>
@@ -282,7 +250,7 @@ export function Products() {
           eyebrow="Supporti Acustici · Non Medicali"
           title="Amplificatori"
           emphasis="Acustici."
-          description="Soluzioni immediate per difficoltà uditive lievi o temporanee. Pronti all'uso, senza prescrizione, con la qualità tecnica M.A.X.Oto."
+          description="Soluzioni immediate per difficoltà uditive lievi o temporanee. Pronti all'uso, senza prescrizione, con la qualità tecnica M.A.X.OTO."
         />
 
         <motion.div

@@ -9,49 +9,18 @@ export function Pricing() {
   const items = [
     ["01", "Test Gratuito", "Audiometria completa con audioprotesista qualificato."],
     ["02", "Garanzia 2 Anni", "Copertura completa su difetti e usura ordinaria."],
-    ["03", "Assistenza Domiciliare", "Veniamo direttamente a casa tua, senza spostamenti."],
-    ["04", "Pratica ASL", "Gestiamo la tua pratica per il rimborso ASL."],
+    ["03", "Assistenza Rapida", "Problemi con i nostri prodotti? Contattaci e penseremo noi al resto."],
   ];
 
   return (
     <section id="pricing" className="relative py-32 lg:py-44 bg-cream">
       <div className="container-x">
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-15%" }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center max-w-3xl mx-auto"
-        >
-          <div className="eyebrow mb-7 justify-center">Tutto Incluso</div>
-          <h2 className="display-md">
-            Un pacchetto completo, <em>nessun costo nascosto.</em>
-          </h2>
-          <p className="lead mx-auto mt-7">
-            Prezzo trasparente per il Maxoto AI-Sense — la qualità italiana, senza intermediari.
-          </p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true, margin: "-15%" }}
-          transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-          className="my-16 lg:my-20 text-center relative"
-        >
-          <div className="glow-gold w-[40vw] h-[40vw] left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30" />
-          <div className="relative font-serif text-[clamp(5rem,16vw,12rem)] leading-none tracking-tight">
-            <span className="shimmer-text">€ 950</span>
-          </div>
-          <div className="text-[11px] tracking-[0.3em] uppercase text-ink-mute mt-4">+ 4% IVA · Marcatura CE0051</div>
-        </motion.div>
-
-        <motion.div
           initial="hidden"
           whileInView="show"
           viewport={{ once: true, margin: "-10%" }}
-          variants={{ show: { transition: { staggerChildren: 0.1 } } }}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5"
+          variants={{ show: { transition: { staggerChildren: 0.12 } } }}
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-7 max-w-5xl mx-auto"
         >
           {items.map(([n, title, desc]) => (
             <motion.div
