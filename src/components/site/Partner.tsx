@@ -29,7 +29,7 @@ export function Partner() {
             Crea il tuo corner <em>insieme a noi</em>.
           </h2>
           <p className="lead mt-7">
-            Vendi i nostri <strong className="text-ink font-semibold">Amplificatori Acustici</strong> professionali nel tuo punto vendita. Direttamente dal produttore, <strong className="text-ink font-semibold">senza intermediari</strong>, con la qualità Made in Napoli e il supporto tecnico continuo di M.A.X.Oto.
+            Vendi i nostri <strong className="text-ink font-semibold">Amplificatori Acustici</strong> professionali nel tuo punto vendita. Direttamente dal produttore, <strong className="text-ink font-semibold">senza intermediari</strong>, con la qualità Made in Italy e il supporto tecnico continuo di M.A.X.OTO.
           </p>
 
           <ul className="mt-10 space-y-5">
