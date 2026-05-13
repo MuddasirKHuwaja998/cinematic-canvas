@@ -184,13 +184,8 @@ export function Products() {
           >
             <div className="eyebrow mb-7">I Nostri Prodotti</div>
             <h2 className="display-md">
-              Due famiglie. <em>Una sola cura</em> per l'udito.
+              Eccellenza italiana, <em>su misura per te.</em>
             </h2>
-            <p className="lead mt-7">
-              Una linea di <strong className="text-ink font-medium">apparecchi acustici medicali</strong> certificati
-              CE0051 e una linea di <strong className="text-ink font-medium">amplificatori acustici</strong> pronti
-              all'uso. Scegli in base al tuo bisogno, non al tuo budget.
-            </p>
           </motion.div>
 
           <motion.div
@@ -203,7 +198,7 @@ export function Products() {
             <div className="relative pl-8 border-l border-gold/40">
               <div className="chapter-num mb-4">— Made in Napoli</div>
               <p className="font-serif italic text-2xl lg:text-3xl text-ink leading-snug">
-                "Dal produttore al tuo orecchio.<br/>Senza intermediari, senza compromessi."
+                "Dai nostri laboratori alla tua attività: l'eccellenza che massimizza la tua redditività."
               </p>
               <div className="mt-6 flex items-center gap-4">
                 <span className="waveform" aria-hidden>
